@@ -30,3 +30,20 @@
     font-size: 18px;
     color: gray;
 }
+
+@media screen and (max-width: 1000px) {
+    .result__box {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .row__box {
+        padding: 8px 0px 8px 16px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .result__box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
