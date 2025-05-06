@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://chlodh83b7vok"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_d06mv"]
+[ext_resource type="PackedScene" uid="uid://bkp6t4ef15135" path="res://falling-block.tscn" id="2_rhphy"]
+[ext_resource type="PackedScene" uid="uid://bbflshd5rn2q3" path="res://floor.tscn" id="3_ln057"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5fc4x"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_d06mv")
+
+[node name="Column-1" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Column-1"]
+material = SubResource("CanvasItemMaterial_5fc4x")
+offset_left = 2.0
+offset_right = 98.0
+offset_bottom = 640.0
+color = Color(0.145098, 0.105882, 0.227451, 1)
+
+[node name="Column-2" type="Node2D" parent="."]
+position = Vector2(100, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Column-2"]
+material = SubResource("CanvasItemMaterial_5fc4x")
+offset_left = 2.0
+offset_right = 98.0
+offset_bottom = 640.0
+color = Color(0.145098, 0.105882, 0.227451, 1)
+
+[node name="Column-3" type="Node2D" parent="."]
+position = Vector2(200, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Column-3"]
+material = SubResource("CanvasItemMaterial_5fc4x")
+offset_left = 2.0
+offset_right = 98.0
+offset_bottom = 640.0
+color = Color(0.145098, 0.105882, 0.227451, 1)
+
+[node name="Column-4" type="Node2D" parent="."]
+position = Vector2(300, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Column-4"]
+material = SubResource("CanvasItemMaterial_5fc4x")
+offset_left = 2.0
+offset_right = 98.0
+offset_bottom = 640.0
+color = Color(0.145098, 0.105882, 0.227451, 1)
+
+[node name="Column-5" type="Node2D" parent="."]
+position = Vector2(400, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Column-5"]
+material = SubResource("CanvasItemMaterial_5fc4x")
+offset_left = 2.0
+offset_right = 98.0
+offset_bottom = 640.0
+color = Color(0.145098, 0.105882, 0.227451, 1)
+
+[node name="FallingBlockScene" parent="." instance=ExtResource("2_rhphy")]
+position = Vector2(25, 0)
+
+[node name="FloorScene" parent="." instance=ExtResource("3_ln057")]
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+z_index = -1
+offset_right = 500.0
+offset_bottom = 640.0
+color = Color(0.0352941, 0.0235294, 0.0941176, 1)
