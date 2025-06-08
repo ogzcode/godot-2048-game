@@ -3,7 +3,7 @@ extends Node2D
 @onready var block_scene = preload("res://block.tscn")
 
 var columns_group = []
-var current_block: RigidBody2D = null
+var current_block: CharacterBody2D = null
 var current_column_index: int = 0
 var is_control_block_active: bool = false
 var game_grid: Array[Array] = []
@@ -24,9 +24,6 @@ func _on_column_clicked(index: int):
 	if current_block != null && is_control_block_active:
 		var target_column = columns_group[index]
 		current_block.global_position.x = target_column.global_position.x + 45
-		current_block.linear_velocity = Vector2.ZERO
-		current_block.angular_velocity = 0.0
-		current_block.freeze = false
 	
 func spawn_random_block():
 	if is_control_block_active:
@@ -43,11 +40,11 @@ func spawn_random_block():
 	current_block.value = random_value
 	
 	add_child(current_block)
-	current_block.freeze = false
+	current_block.set_physics_process(true)
 	current_block.block_landed.connect(Callable(self, "_on_block_landed").bind(current_block))
 	is_control_block_active = true
 	
-func _on_block_landed(landed_block: RigidBody2D):
+func _on_block_landed(landed_block: CharacterBody2D):
 	if current_block == landed_block:
 		var landed_column_index = -1
 		var min_distance = INF
