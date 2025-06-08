@@ -9,10 +9,8 @@ size = Vector2(45, 45)
 
 [sub_resource type="Theme" id="Theme_e8np6"]
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(22.5, 22.5)
-mass = 0.1
-gravity_scale = 0.1
 script = ExtResource("1_5qvbu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

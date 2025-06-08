@@ -1,14 +1,12 @@
-extends RigidBody2D
+extends CharacterBody2D
 
-@export var value: int = 2
 signal block_landed
+@export var value: int = 2
+@export var falling_speed = 200
 
 func _ready() -> void:
 	$Label.text = str(value)
-	
 	update_block_color()
-	
-	sleeping_state_changed.connect(_on_sleeping_state_changed)
 
 func update_block_color():
 	match value:
@@ -26,8 +24,11 @@ func update_block_color():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	velocity.y = falling_speed
 	
-func _on_sleeping_state_changed():
-	if sleeping:
+	move_and_slide()
+	
+	if is_on_floor():
 		block_landed.emit()
+		set_physics_process(false)
+		velocity = Vector2.ZERO
