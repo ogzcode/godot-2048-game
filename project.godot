@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=500
 window/size/viewport_height=640
 
+[global_group]
+
+is_ground="true"
+
 [layer_names]
 
 2d_render/layer_1="Block"
