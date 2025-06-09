@@ -1,23 +1,24 @@
 [gd_scene load_steps=5 format=3 uid="uid://bped7psrq5mii"]
 
 [ext_resource type="Script" path="res://block.gd" id="1_5qvbu"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_58gam"]
+[ext_resource type="Texture2D" uid="uid://dlv2gn71wi3tr" path="res://assets/blue.png" id="2_s055f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4a4uo"]
-size = Vector2(45, 45)
+size = Vector2(63, 63)
 
 [sub_resource type="Theme" id="Theme_e8np6"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(22.5, 22.5)
+position = Vector2(32, 32)
 script = ExtResource("1_5qvbu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(45, 45)
-texture = SubResource("CanvasTexture_58gam")
+texture_filter = 3
+scale = Vector2(2, 2)
+texture = ExtResource("2_s055f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
 shape = SubResource("RectangleShape2D_4a4uo")
 
 [node name="Label" type="Label" parent="."]
@@ -26,13 +27,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_e8np6")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.0980963, 0.226537, 0.310028, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
