@@ -35,9 +35,9 @@ func spawn_random_block():
 	current_column_index = random_column_index
 	var target_column = columns_group[random_column_index]
 	current_block = block_scene.instantiate()
-	current_block.global_position = Vector2(target_column.global_position.x + 45, -50)
+	current_block.global_position = Vector2(target_column.global_position.x + 45, -70)
 	
-	var possible_values = [2, 4, 8, 16]
+	var possible_values = [2, 2, 2, 2, 4, 4, 4, 8, 8, 16, 32]
 	var random_value = possible_values[randi() % possible_values.size()]
 	current_block.value = random_value
 	
