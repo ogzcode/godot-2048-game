@@ -16,7 +16,7 @@ scale = Vector2(10, 1)
 shape = SubResource("RectangleShape2D_6lvoq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
+modulate = Color(0.513726, 0.513726, 0.513726, 0.564706)
 light_mask = 0
 position = Vector2(45, 320)
 scale = Vector2(90, 640)
